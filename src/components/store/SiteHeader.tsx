@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
+import { Heart, LayoutDashboard, Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/lib/store";
 
@@ -33,6 +33,9 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="col-start-3 flex items-center gap-1">
+          <Link to="/admin" className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-gold-gradient px-3 py-1.5 text-xs font-semibold text-gold-foreground shadow-gold sm:text-sm">
+            <LayoutDashboard className="h-4 w-4" /> <span className="hidden sm:inline">لوحة التحكم</span>
+          </Link>
           <Link to="/shop" aria-label="بحث" className="hidden rounded-full p-2 hover:bg-muted sm:block"><Search className="h-5 w-5" /></Link>
           <Link to="/wishlist" aria-label="المفضلة" className="relative rounded-full p-2 hover:bg-muted">
             <Heart className="h-5 w-5" />
@@ -53,6 +56,7 @@ export function SiteHeader() {
             <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-3 font-medium">{n.label}</Link>
           ))}
           <Link to="/wishlist" onClick={() => setOpen(false)} className="py-3 font-medium">المفضلة</Link>
+          <Link to="/admin" onClick={() => setOpen(false)} className="py-3 font-medium text-gold">لوحة التحكم</Link>
         </nav>
       )}
     </header>
