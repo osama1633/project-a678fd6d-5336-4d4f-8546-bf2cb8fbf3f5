@@ -3,7 +3,7 @@ import { CheckCircle2, CreditCard } from "lucide-react";
 import { useState } from "react";
 import { PageHero } from "@/components/store/ProductCard";
 import { useStore } from "@/lib/store";
-import { OrderSummary } from "./cart";
+import { OrderSummary } from "@/components/store/OrderSummary";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
