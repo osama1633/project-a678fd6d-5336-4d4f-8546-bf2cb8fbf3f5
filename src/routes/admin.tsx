@@ -31,7 +31,7 @@ function AdminLayout() {
   const [open, setOpen] = useState(false);
   return (
     <div className="flex min-h-screen w-full bg-background">
-      <aside className={`fixed inset-y-0 right-0 z-50 flex w-64 flex-col overflow-hidden bg-ink text-ink-foreground transition-transform lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <aside className={`fixed inset-y-0 right-0 z-50 w-64 shrink-0 flex-col overflow-hidden bg-ink text-ink-foreground lg:sticky lg:top-0 lg:flex lg:h-screen ${open ? "flex" : "hidden"}`}>
         <img src={images.a7} alt="" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full object-cover opacity-25" />
         <div className="relative flex items-center justify-between p-6">
           <Link to="/" className="font-display text-2xl font-bold">رواق</Link>

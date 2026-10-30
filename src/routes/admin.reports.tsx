@@ -19,7 +19,7 @@ function Reports() {
         <StatCard title="معدل التحويل" value="٢٫٨٪" note="من الزيارات" change="٠٫٤٪" icon={Percent} />
         <StatCard title="متوسط الطلب" value="٤٣٨ ر.س" note="لكل طلب" change="٥٪" icon={TrendingUp} />
       </div>
-      <div className="mt-4 grid gap-4 xl:grid-cols-[1fr_360px]">
+      <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,1fr)_360px]">
         <Panel title="المبيعات الشهرية"><SalesChart data={salesYear} height={320} /></Panel>
         <Panel title="المبيعات حسب القسم">
           <div className="space-y-4">

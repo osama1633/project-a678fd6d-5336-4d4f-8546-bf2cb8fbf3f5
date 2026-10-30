@@ -28,7 +28,7 @@ function Dashboard() {
         <StatCard title="المنتجات" value="٤٨" note="إجمالي المنتجات" change="١٢٪" icon={Box} />
       </div>
 
-      <div className="mt-4 grid gap-4 xl:grid-cols-[1fr_340px]">
+      <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
         <div className="space-y-4">
           <Panel title="نظرة عامة على المبيعات" action={
             <div className="flex rounded-lg border p-1 text-xs">
@@ -39,7 +39,7 @@ function Dashboard() {
           }>
             <SalesChart data={data} />
           </Panel>
-          <div className="grid gap-4 lg:grid-cols-[1fr_260px]">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_260px]">
             <Panel title="أحدث الطلبات" icon={List} action={<Link to="/admin/orders" className="text-xs text-gold">عرض الكل ←</Link>}>
               <DataTable head={["رقم الطلب", "العميل", "التاريخ", "الإجمالي", "الحالة"]}>
                 {orders.slice(0, 5).map((o) => (

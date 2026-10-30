@@ -47,7 +47,7 @@ function Shop() {
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-wrap lg:px-0">
-            <Link to="/shop" search={(p) => ({ ...p, category: undefined })} className={chip(!category)}>الكل</Link>
+            <Link to="/shop" search={(p) => (p.sort ? { sort: p.sort } : {})} className={chip(!category)}>الكل</Link>
             {categories.map((c) => (
               <Link key={c.slug} to="/shop" search={(p) => ({ ...p, category: c.slug })} className={chip(category === c.slug)}>{c.name}</Link>
             ))}
