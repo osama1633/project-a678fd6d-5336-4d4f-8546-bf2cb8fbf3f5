@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Storefront is frontend-only: catalog/admin mock data lives in src/data/*, cart/wishlist in src/lib/store.tsx (localStorage) — swap these for API calls when a backend is added.
+- Admin UI lives under /admin routes; __root hides the store header/footer for /admin paths.

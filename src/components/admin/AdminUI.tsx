@@ -35,7 +35,7 @@ export function StatCard({ title, value, note, change, icon: Icon }: { title: st
       <div className="flex items-start justify-between">
         <div>
           <div className="text-sm font-medium">{title}</div>
-          <div className="mt-2 font-display text-3xl font-bold">{value}</div>
+          <div className="mt-2 whitespace-nowrap font-display text-2xl font-bold xl:text-3xl">{value}</div>
         </div>
         <span className="grid h-11 w-11 place-items-center rounded-full bg-gold-soft text-gold"><Icon className="h-5 w-5" /></span>
       </div>
