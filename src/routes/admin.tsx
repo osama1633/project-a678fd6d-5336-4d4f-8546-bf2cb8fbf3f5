@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
-import { BarChart3, Bell, ClipboardList, Home, LayoutGrid, LogOut, Menu, Package, Search, Settings, Tag, User, X } from "lucide-react";
+import { ArrowRight, BarChart3, Bell, ClipboardList, Home, LayoutGrid, LogOut, Menu, Package, Search, Settings, Tag, User, X } from "lucide-react";
 import { useState } from "react";
 import { images } from "@/data/products";
 
@@ -58,6 +58,9 @@ function AdminLayout() {
             <input placeholder="ابحث عن منتج أو طلب أو عميل..." className="field !py-2 !pr-10" />
           </div>
           <div className="mr-auto flex items-center gap-4">
+            <Link to="/" className="inline-flex items-center gap-1.5 rounded-full border border-gold/50 px-3 py-1.5 text-xs font-semibold text-gold transition hover:bg-gold-soft sm:text-sm">
+              <ArrowRight className="h-4 w-4" /> <span className="hidden sm:inline">الصفحة الرئيسية</span>
+            </Link>
             <button aria-label="الإشعارات" className="relative"><Bell className="h-5 w-5" /><span className="absolute -top-1 -left-1 grid h-4 w-4 place-items-center rounded-full bg-destructive text-[10px] text-destructive-foreground">٣</span></button>
             <div className="flex items-center gap-2">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-gold-soft font-semibold text-gold">ع</span>
