@@ -63,7 +63,7 @@ function Home() {
   const best = [...products].filter((p) => p.bestSeller).sort((a, b) => b.reviews - a.reviews);
   const [lead, ...restBest] = best;
   const fresh = products.filter((p) => p.isNew).slice(0, 4);
-  const editorial = [products.find((p) => p.id === "golden-face")!, products.find((p) => p.id === "arabian-horse")!];
+  const editorial = ["golden-face", "arabian-horse"].map((id) => products.find((p) => p.id === id)).filter((p): p is Product => !!p);
 
   return (
     <>
@@ -164,8 +164,7 @@ function Home() {
       {/* Editorial features */}
       <section className="mx-auto max-w-7xl space-y-28 px-6 py-28 md:space-y-40 md:px-10 md:py-40">
         <Heading eyebrow="مختارات المحرّر" title="قطعٌ تستحق أن تُروى" />
-        <EditorialFeature p={editorial[0]} index="٠١" />
-        <EditorialFeature p={editorial[1]} index="٠٢" reverse />
+        {editorial.map((p, i) => <EditorialFeature key={p.id} p={p} index={i ? "٠٢" : "٠١"} reverse={i === 1} />)}
       </section>
 
       {/* Full-bleed promo */}
