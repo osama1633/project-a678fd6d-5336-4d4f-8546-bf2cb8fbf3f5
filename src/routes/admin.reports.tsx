@@ -26,7 +26,7 @@ function Reports() {
             {categories.map((c, i) => (
               <div key={c.slug}>
                 <div className="mb-1 flex justify-between text-sm"><span>{c.name}</span><span className="text-muted-foreground">{share[i]}٪</span></div>
-                <div className="h-2 rounded bg-muted"><div className="h-full rounded bg-gold-gradient" style={{ width: `${share[i] * 3}%` }} /></div>
+                <div className="h-2 rounded bg-muted"><div className="h-full rounded bg-gold-gradient" style={{ width: `${(share[i] ?? 0) * 3}%` }} /></div>
               </div>
             ))}
           </div>

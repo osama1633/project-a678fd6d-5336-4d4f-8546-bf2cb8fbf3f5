@@ -31,7 +31,7 @@ function ProductPage() {
   const [sizeIdx, setSizeIdx] = useState(0);
   const [frame, setFrame] = useState("أسود");
   const [qty, setQty] = useState(1);
-  const size = product.sizes[sizeIdx];
+  const size = product.sizes[sizeIdx] ?? product.sizes[0]!;
   const liked = wishlist.includes(product.id);
   const related = products.filter((p) => p.id !== product.id).slice(0, 4);
 

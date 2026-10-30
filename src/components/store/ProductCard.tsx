@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
           <Heart className={`h-4 w-4 ${liked ? "fill-gold text-gold" : ""}`} />
         </button>
         <button
-          onClick={() => { addToCart({ productId: product.id, size: product.sizes[0].label, price: product.sizes[0].price }); toast.success("تمت الإضافة إلى السلة"); }}
+          onClick={() => { const s = product.sizes[0]; if (s) addToCart({ productId: product.id, size: s.label, price: s.price }); toast.success("تمت الإضافة إلى السلة"); }}
           className="absolute inset-x-3 bottom-3 flex translate-y-14 items-center justify-center gap-2 rounded-md bg-ink py-2.5 text-sm font-semibold text-ink-foreground transition group-hover:translate-y-0">
           <ShoppingBag className="h-4 w-4" /> أضف إلى السلة
         </button>
