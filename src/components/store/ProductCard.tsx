@@ -1,17 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import { toast } from "sonner";
-import { formatPrice, getCategory, type Product } from "@/data/products";
+import { formatPrice, ProductImg, useCatalog, type Product } from "@/data/products";
 import { useStore } from "@/lib/store";
 
 export function ProductCard({ product }: { product: Product }) {
   const { wishlist, toggleWishlist, addToCart } = useStore();
+  const { getCategory } = useCatalog();
   const liked = wishlist.includes(product.id);
   return (
     <div className="group flex flex-col">
       <div className="relative overflow-hidden rounded-lg bg-muted">
         <Link to="/product/$id" params={{ id: product.id }} className="block aspect-[4/5]">
-          <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+          <ProductImg src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
         </Link>
         {product.badge && (
           <span className="absolute top-3 right-3 rounded-full bg-card/90 px-3 py-1 text-xs font-semibold text-foreground">{product.badge}</span>

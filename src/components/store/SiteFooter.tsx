@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { categories } from "@/data/products";
+import { useCatalog } from "@/data/products";
 
 export function SiteFooter() {
+  const { categories } = useCatalog();
   return (
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
