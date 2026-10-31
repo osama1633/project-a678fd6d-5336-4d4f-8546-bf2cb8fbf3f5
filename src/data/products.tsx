@@ -20,16 +20,16 @@ export const images = { a1: a1.url, a2: a2.url, a3: a3.url, a4: a4.url, a5: a5.u
 export type Category = { slug: string; name: string; image: string; desc: string };
 export type Size = { label: string; dims: string; price: number };
 export type Product = {
-  id: string; name: string; category: string; image: string; price: number; oldPrice?: number;
-  rating: number; reviews: number; badge?: string; isNew?: boolean;
-  bestSeller?: boolean; description: string; sizes: Size[]; stock: number;
+  id: string; name: string; category: string; image: string; price: number; oldPrice?: number | undefined;
+  rating: number; reviews: number; badge?: string | undefined; isNew?: boolean | undefined;
+  bestSeller?: boolean | undefined; description: string; sizes: Size[]; stock: number;
 };
 
 export type ProductInput = {
-  id?: string; name: string; category: string; image: string; price: number; oldPrice?: number;
-  badge?: string; isNew?: boolean; bestSeller?: boolean; description: string; sizes: Size[]; stock: number;
+  id?: string | undefined; name: string; category: string; image: string; price: number; oldPrice?: number | undefined;
+  badge?: string | undefined; isNew?: boolean | undefined; bestSeller?: boolean | undefined; description: string; sizes: Size[]; stock: number;
 };
-export type CategoryInput = { slug?: string; name: string; image: string; desc: string };
+export type CategoryInput = { slug?: string | undefined; name: string; image: string; desc: string };
 
 const mapProduct = (r: Tables<"products">): Product => ({
   id: r.id,
