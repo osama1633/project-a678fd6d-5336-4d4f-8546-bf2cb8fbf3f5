@@ -4,12 +4,13 @@ import { useState } from "react";
 import { AdminPageHeader, DataTable, Panel, StatCard, StatusBadge, Td } from "@/components/admin/AdminUI";
 import { SalesChart } from "@/components/admin/SalesChart";
 import { orders, salesWeek, salesYear } from "@/data/admin";
-import { formatPrice, products } from "@/data/products";
+import { formatPrice, ProductImg, useCatalog } from "@/data/products";
 
 export const Route = createFileRoute("/admin/")({ component: Dashboard });
 
 function Dashboard() {
   const [range, setRange] = useState("7");
+  const { products } = useCatalog();
   const data = range === "year" ? salesYear : salesWeek;
   const best = [...products].sort((a, b) => b.reviews - a.reviews).slice(0, 5);
   return (
@@ -61,7 +62,7 @@ function Dashboard() {
             {best.map((p, i) => (
               <li key={p.id} className="flex items-center gap-3 py-3">
                 <span className="grid h-5 w-5 shrink-0 place-items-center rounded bg-gold text-[10px] text-gold-foreground">{i + 1}</span>
-                <img src={p.image} alt={p.name} className="h-14 w-14 shrink-0 rounded-md object-cover" />
+                <ProductImg src={p.image} alt={p.name} className="h-14 w-14 shrink-0 rounded-md object-cover" />
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-sm font-semibold">{p.name}</div>
                   <div className="text-sm">{formatPrice(p.price)}</div>
@@ -78,7 +79,7 @@ function Dashboard() {
         <div className="flex gap-4 overflow-x-auto pb-2">
           {products.map((p) => (
             <div key={p.id} className="w-44 shrink-0 rounded-lg border p-2 text-center">
-              <img src={p.image} alt={p.name} className="h-28 w-full rounded object-cover" />
+              <ProductImg src={p.image} alt={p.name} className="h-28 w-full rounded object-cover" />
               <div className="mt-2 truncate text-sm">{p.name}</div>
               <div className="text-xs text-muted-foreground">{formatPrice(p.price)}</div>
             </div>

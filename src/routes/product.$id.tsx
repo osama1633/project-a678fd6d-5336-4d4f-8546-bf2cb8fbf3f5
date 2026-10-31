@@ -22,11 +22,16 @@ function ProductPage() {
   const { id } = Route.useParams();
   const { products, getProduct, getCategory, isLoading } = useCatalog();
   const product = getProduct(id);
-  if (!isLoading && !product) throw notFound();
   const { addToCart, wishlist, toggleWishlist } = useStore();
   const [sizeIdx, setSizeIdx] = useState(0);
   const [frame, setFrame] = useState("أسود");
   const [qty, setQty] = useState(1);
+  if (!product) {
+    if (isLoading) {
+      return <div className="mx-auto max-w-7xl px-4 py-10 md:px-8"><div className="aspect-square animate-pulse rounded-2xl bg-muted" /></div>;
+    }
+    throw notFound();
+  }
   const size = product.sizes[sizeIdx] ?? product.sizes[0]!;
   const liked = wishlist.includes(product.id);
   const related = products.filter((p) => p.id !== product.id).slice(0, 4);
@@ -39,7 +44,7 @@ function ProductPage() {
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="grid grid-cols-[1fr] gap-3">
           <div className="overflow-hidden rounded-2xl bg-muted">
-            <img src={product.image} alt={product.name} className="max-h-[80vh] w-full object-cover" />
+            <ProductImg src={product.image} alt={product.name} className="max-h-[80vh] w-full object-cover" />
           </div>
         </div>
         <div className="lg:sticky lg:top-32 lg:self-start">
