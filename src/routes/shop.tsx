@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { categories, products } from "@/data/products";
+import { useCatalog } from "@/data/products";
 import { PageHero, ProductCard } from "@/components/store/ProductCard";
 
 type Search = { category?: string | undefined; sort?: string | undefined };
@@ -31,6 +31,7 @@ const sorts = [
 function Shop() {
   const { category, sort = "featured" } = Route.useSearch();
   const navigate = useNavigate({ from: "/shop" });
+  const { products, categories } = useCatalog();
   let list = category ? products.filter((p) => p.category === category) : [...products];
   if (sort === "price-asc") list.sort((a, b) => a.price - b.price);
   if (sort === "price-desc") list.sort((a, b) => b.price - a.price);

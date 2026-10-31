@@ -3,13 +3,14 @@ import { Coins, Percent, ShoppingCart, TrendingUp } from "lucide-react";
 import { AdminPageHeader, Panel, StatCard } from "@/components/admin/AdminUI";
 import { SalesChart } from "@/components/admin/SalesChart";
 import { salesYear } from "@/data/admin";
-import { categories } from "@/data/products";
+import { useCatalog } from "@/data/products";
 
 export const Route = createFileRoute("/admin/reports")({ component: Reports });
 
 const share = [28, 18, 14, 12, 10, 9, 6, 3];
 
 function Reports() {
+  const { categories } = useCatalog();
   return (
     <>
       <AdminPageHeader title="التقارير" subtitle="أداء المتجر خلال عام ٢٠٢٦" action={<button className="btn-outline">تحميل التقرير</button>} />

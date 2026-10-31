@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Minus, Plus, Trash2 } from "lucide-react";
-import { formatPrice, getProduct } from "@/data/products";
+import { formatPrice, ProductImg, useCatalog } from "@/data/products";
 import { OrderSummary } from "@/components/store/OrderSummary";
 import { PageHero } from "@/components/store/ProductCard";
 import { useStore } from "@/lib/store";
@@ -19,6 +19,7 @@ export const Route = createFileRoute("/cart")({
 
 function Cart() {
   const { cart, updateQty, removeFromCart, cartTotal } = useStore();
+  const { getProduct } = useCatalog();
   return (
     <>
       <PageHero title="سلة التسوق" />
@@ -37,7 +38,7 @@ function Cart() {
                 if (!p) return null;
                 return (
                   <div key={item.productId + item.size} className="flex gap-4 py-6">
-                    <img src={p.image} alt={p.name} className="h-32 w-24 shrink-0 rounded-lg object-cover" />
+                    <ProductImg src={p.image} alt={p.name} className="h-32 w-24 shrink-0 rounded-lg object-cover" />
                     <div className="flex min-w-0 flex-1 flex-col">
                       <div className="flex justify-between gap-2">
                         <Link to="/product/$id" params={{ id: p.id }} className="font-display text-lg font-semibold">{p.name}</Link>

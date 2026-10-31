@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Award, Frame, ShieldCheck, Truck } from "lucide-react";
-import { categories, formatPrice, getCategory, images, products, type Product } from "@/data/products";
+import { formatPrice, images, ProductImg, useCatalog, type Product } from "@/data/products";
 import { ProductCard } from "@/components/store/ProductCard";
 
 export const Route = createFileRoute("/")({
@@ -34,11 +34,12 @@ function Heading({ eyebrow, title, sub, center }: { eyebrow: string; title: stri
 }
 
 function EditorialFeature({ p, reverse, index }: { p: Product; reverse?: boolean; index: string }) {
+  const { getCategory } = useCatalog();
   return (
     <div className={`grid items-center gap-10 md:grid-cols-12 md:gap-16 ${reverse ? "md:[&>*:first-child]:order-2" : ""}`}>
       <Link to="/product/$id" params={{ id: p.id }} className="group relative md:col-span-7">
         <div className="overflow-hidden rounded-sm">
-          <img src={p.image} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-[1.4s] ease-out group-hover:scale-[1.04] md:aspect-[5/6]" />
+          <ProductImg src={p.image} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-[1.4s] ease-out group-hover:scale-[1.04] md:aspect-[5/6]" />
         </div>
         <div className={`absolute -bottom-5 hidden h-24 w-24 border border-gold/60 md:block ${reverse ? "-right-5" : "-left-5"}`} />
       </Link>
@@ -60,6 +61,7 @@ function EditorialFeature({ p, reverse, index }: { p: Product; reverse?: boolean
 }
 
 function Home() {
+  const { products, categories, getCategory } = useCatalog();
   const best = [...products].filter((p) => p.bestSeller).sort((a, b) => b.reviews - a.reviews);
   const [lead, ...restBest] = best;
   const fresh = products.filter((p) => p.isNew).slice(0, 4);
@@ -124,7 +126,7 @@ function Home() {
             const span = idx === 0 ? "col-span-2 row-span-2" : idx === 5 ? "md:col-span-2" : "";
             return (
               <Link key={c.slug} to="/shop" search={{ category: c.slug }} className={`group relative overflow-hidden rounded-sm ${span}`}>
-                <img src={c.image} alt={c.name} loading="lazy" className="h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-110" />
+                <ProductImg src={c.image} alt={c.name} loading="lazy" className="h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-ink-fade opacity-90 transition group-hover:opacity-100" />
                 <div className="absolute inset-3 border border-ink-foreground/0 transition duration-500 group-hover:border-ink-foreground/40" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-ink-foreground md:p-7">
@@ -144,7 +146,7 @@ function Home() {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             {lead && (
               <Link to="/product/$id" params={{ id: lead.id }} className="group relative block overflow-hidden rounded-sm">
-                <img src={lead.image} alt={lead.name} className="aspect-[4/5] h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" />
+                <ProductImg src={lead.image} alt={lead.name} className="aspect-[4/5] h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" />
                 <div className="absolute inset-0 bg-ink-fade" />
                 <span className="absolute top-6 right-6 rounded-full bg-gold-gradient px-4 py-1.5 text-xs font-semibold text-gold-foreground">الأكثر مبيعاً</span>
                 <div className="absolute inset-x-0 bottom-0 p-8 text-ink-foreground md:p-10">
