@@ -14,7 +14,92 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      categories: {
+        Row: {
+          description: string
+          image: string
+          name: string
+          slug: string
+          sort_order: number
+        }
+        Insert: {
+          description?: string
+          image?: string
+          name: string
+          slug: string
+          sort_order?: number
+        }
+        Update: {
+          description?: string
+          image?: string
+          name?: string
+          slug?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          badge: string | null
+          best_seller: boolean
+          category: string
+          created_at: string
+          description: string
+          id: string
+          image: string
+          is_new: boolean
+          name: string
+          old_price: number | null
+          price: number
+          rating: number
+          reviews: number
+          sizes: Json
+          stock: number
+        }
+        Insert: {
+          badge?: string | null
+          best_seller?: boolean
+          category: string
+          created_at?: string
+          description?: string
+          id: string
+          image?: string
+          is_new?: boolean
+          name: string
+          old_price?: number | null
+          price?: number
+          rating?: number
+          reviews?: number
+          sizes?: Json
+          stock?: number
+        }
+        Update: {
+          badge?: string | null
+          best_seller?: boolean
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image?: string
+          is_new?: boolean
+          name?: string
+          old_price?: number | null
+          price?: number
+          rating?: number
+          reviews?: number
+          sizes?: Json
+          stock?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "products_category_fkey"
+            columns: ["category"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
