@@ -8,9 +8,9 @@ import { OrderSummary } from "@/components/store/OrderSummary";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "إتمام الطلب | رواق" },
+      { title: "إتمام الطلب | لوفيانا" },
       { name: "description", content: "أدخل بيانات الشحن والدفع لإتمام طلبك." },
-      { property: "og:title", content: "إتمام الطلب | رواق" },
+      { property: "og:title", content: "إتمام الطلب | لوفيانا" },
       { property: "og:description", content: "خطوة أخيرة لتصلك لوحتك." },
     ],
   }),

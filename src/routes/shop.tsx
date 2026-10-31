@@ -11,9 +11,9 @@ export const Route = createFileRoute("/shop")({
   }),
   head: () => ({
     meta: [
-      { title: "المتجر | رواق للوحات الجدارية" },
+      { title: "المتجر | لوفيانا للوحات الجدارية" },
       { name: "description", content: "تسوّق اللوحات الجدارية حسب القسم والسعر." },
-      { property: "og:title", content: "المتجر | رواق" },
+      { property: "og:title", content: "المتجر | لوفيانا" },
       { property: "og:description", content: "تشكيلة كاملة من اللوحات الفنية الفاخرة." },
     ],
   }),

@@ -20,7 +20,7 @@ export const customers = [
 ];
 
 export const coupons = [
-  { code: "رواق٢٠", type: "نسبة", value: "٢٠٪", uses: 142, limit: 500, expires: "2026/12/31", status: "نشط" },
+  { code: "لوفيانا٢٠", type: "نسبة", value: "٢٠٪", uses: 142, limit: 500, expires: "2026/12/31", status: "نشط" },
   { code: "اليوم_الوطني", type: "نسبة", value: "٢٥٪", uses: 389, limit: 400, expires: "2026/09/30", status: "منتهي" },
   { code: "شحن_مجاني", type: "شحن", value: "مجاني", uses: 76, limit: 300, expires: "2026/11/30", status: "نشط" },
   { code: "ترحيب٥٠", type: "مبلغ", value: "٥٠ ر.س", uses: 214, limit: 1000, expires: "2027/01/31", status: "نشط" },

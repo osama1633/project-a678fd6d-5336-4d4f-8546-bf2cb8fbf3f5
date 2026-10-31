@@ -6,9 +6,9 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/wishlist")({
   head: () => ({
     meta: [
-      { title: "المفضلة | رواق" },
+      { title: "المفضلة | لوفيانا" },
       { name: "description", content: "اللوحات التي أعجبتك محفوظة هنا." },
-      { property: "og:title", content: "المفضلة | رواق" },
+      { property: "og:title", content: "المفضلة | لوفيانا" },
       { property: "og:description", content: "قائمة لوحاتك المفضلة." },
     ],
   }),

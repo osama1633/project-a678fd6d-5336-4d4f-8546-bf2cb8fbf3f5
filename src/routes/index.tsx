@@ -6,9 +6,9 @@ import { ProductCard } from "@/components/store/ProductCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "رواق | لوحات فنية جدارية فاخرة في السعودية" },
+      { title: "لوفيانا | لوحات فنية جدارية فاخرة في السعودية" },
       { name: "description", content: "اكتشف لوحات جدارية فاخرة: إسلامية، تجريدية، طبيعة، سيارات ومدن. شحن لجميع مدن المملكة." },
-      { property: "og:title", content: "رواق | لوحات فنية جدارية فاخرة" },
+      { property: "og:title", content: "لوفيانا | لوحات فنية جدارية فاخرة" },
       { property: "og:description", content: "دار سعودية للفن الجداري بجودة متحفية." },
     ],
   }),
@@ -177,7 +177,7 @@ function Home() {
           <div className="max-w-xl">
             <Eyebrow>عرض لفترة محدودة</Eyebrow>
             <h2 className="text-4xl leading-[1.3] font-semibold md:text-6xl">خصم ٢٠٪ على<br />اللوحات متعددة القطع</h2>
-            <p className="mt-6 opacity-70">استخدم الكود <span className="border border-gold/50 px-2 py-0.5 text-gold">رواق٢٠</span> عند إتمام الطلب.</p>
+            <p className="mt-6 opacity-70">استخدم الكود <span className="border border-gold/50 px-2 py-0.5 text-gold">لوفيانا٢٠</span> عند إتمام الطلب.</p>
             <Link to="/shop" search={{ category: "multi" }} className="btn-gold mt-10 !rounded-sm !px-9 !py-4">اكتشف العرض</Link>
           </div>
         </div>
@@ -186,7 +186,7 @@ function Home() {
       {/* New arrivals */}
       <section className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <Heading eyebrow="وصل حديثاً" title="أحدث الإضافات إلى الرواق" />
+          <Heading eyebrow="وصل حديثاً" title="أحدث الإضافات إلى اللوفيانا" />
           <Link to="/shop" search={{ sort: "new" }} className="mb-14 text-sm font-semibold text-gold hover:underline">عرض الكل ←</Link>
         </div>
         <div className="grid grid-cols-2 gap-x-5 gap-y-12 md:grid-cols-4 md:gap-x-8">

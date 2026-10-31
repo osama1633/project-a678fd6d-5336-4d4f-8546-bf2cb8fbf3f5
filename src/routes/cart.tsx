@@ -8,9 +8,9 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "سلة التسوق | رواق" },
+      { title: "سلة التسوق | لوفيانا" },
       { name: "description", content: "راجع اللوحات في سلتك وأكمل طلبك." },
-      { property: "og:title", content: "سلة التسوق | رواق" },
+      { property: "og:title", content: "سلة التسوق | لوفيانا" },
       { property: "og:description", content: "راجع طلبك قبل الدفع." },
     ],
   }),

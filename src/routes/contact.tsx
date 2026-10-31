@@ -6,9 +6,9 @@ import { PageHero } from "@/components/store/ProductCard";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "تواصل معنا | رواق للفنون" },
-      { name: "description", content: "تواصل مع فريق رواق للاستفسارات والطلبات الخاصة." },
-      { property: "og:title", content: "تواصل معنا | رواق" },
+      { title: "تواصل معنا | لوفيانا للفنون" },
+      { name: "description", content: "تواصل مع فريق لوفيانا للاستفسارات والطلبات الخاصة." },
+      { property: "og:title", content: "تواصل معنا | لوفيانا" },
       { property: "og:description", content: "يسعدنا خدمتك." },
     ],
   }),

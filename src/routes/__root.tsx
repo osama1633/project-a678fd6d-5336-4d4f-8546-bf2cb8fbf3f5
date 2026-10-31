@@ -60,7 +60,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "رواق | لوحات فنية جدارية فاخرة" },
+      { title: "لوفيانا | لوحات فنية جدارية فاخرة" },
       { name: "description", content: "متجر سعودي للوحات الجدارية الفاخرة." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

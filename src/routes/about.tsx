@@ -4,9 +4,9 @@ import { images } from "@/data/products";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "من نحن | رواق للفنون" },
-      { name: "description", content: "قصة رواق: دار سعودية للفن الجداري الفاخر." },
-      { property: "og:title", content: "من نحن | رواق" },
+      { title: "من نحن | لوفيانا للفنون" },
+      { name: "description", content: "قصة لوفيانا: دار سعودية للفن الجداري الفاخر." },
+      { property: "og:title", content: "من نحن | لوفيانا" },
       { property: "og:description", content: "نؤمن أن لكل جدار حكاية." },
     ],
   }),
@@ -20,7 +20,7 @@ function About() {
         <div>
           <div className="text-sm text-gold">قصتنا</div>
           <h1 className="mt-3 text-5xl leading-tight font-bold">لكل جدارٍ حكاية،<br />ونحن نرويها بالفن</h1>
-          <p className="mt-6 leading-8 text-muted-foreground">انطلقت رواق من الرياض عام ٢٠٢٠ بحلم بسيط: أن يصبح الفن الراقي جزءاً من كل بيت سعودي. نعمل مع فنانين محليين وعالميين، وننتقي كل لوحة بعناية، ثم نطبعها ونؤطرها يدوياً في مشغلنا بأعلى معايير الجودة.</p>
+          <p className="mt-6 leading-8 text-muted-foreground">انطلقت لوفيانا من الرياض عام ٢٠٢٠ بحلم بسيط: أن يصبح الفن الراقي جزءاً من كل بيت سعودي. نعمل مع فنانين محليين وعالميين، وننتقي كل لوحة بعناية، ثم نطبعها ونؤطرها يدوياً في مشغلنا بأعلى معايير الجودة.</p>
           <p className="mt-4 leading-8 text-muted-foreground">من الخط العربي الأصيل إلى الفن التجريدي المعاصر، نؤمن أن اللوحة المناسبة قادرة على تغيير روح المكان.</p>
           <Link to="/shop" className="btn-gold mt-8">اكتشف مجموعتنا</Link>
         </div>
