@@ -2,31 +2,27 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Heart, Minus, Plus, Star, Truck, RotateCcw, Frame } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { formatPrice, getCategory, getProduct, products } from "@/data/products";
+import { formatPrice, ProductImg, useCatalog } from "@/data/products";
 import { ProductCard, SectionHeading } from "@/components/store/ProductCard";
 import { useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/product/$id")({
-  loader: ({ params }) => {
-    const product = getProduct(params.id);
-    if (!product) throw notFound();
-    return { product };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.product.name} | رواق` },
-          { name: "description", content: loaderData.product.description },
-          { property: "og:title", content: `${loaderData.product.name} | رواق` },
-          { property: "og:description", content: loaderData.product.description },
-        ]
-      : [{ title: "غير متوفر | رواق" }, { name: "robots", content: "noindex" }],
+  head: () => ({
+    meta: [
+      { title: "اللوحة | رواق" },
+      { name: "description", content: "تفاصيل اللوحة والمقاسات المتوفرة." },
+      { property: "og:title", content: "اللوحة | رواق" },
+      { property: "og:description", content: "تفاصيل اللوحة والمقاسات المتوفرة." },
+    ],
   }),
   component: ProductPage,
 });
 
 function ProductPage() {
-  const { product } = Route.useLoaderData();
+  const { id } = Route.useParams();
+  const { products, getProduct, getCategory, isLoading } = useCatalog();
+  const product = getProduct(id);
+  if (!isLoading && !product) throw notFound();
   const { addToCart, wishlist, toggleWishlist } = useStore();
   const [sizeIdx, setSizeIdx] = useState(0);
   const [frame, setFrame] = useState("أسود");
