@@ -24,7 +24,7 @@ function SettingsPage() {
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel title="معلومات المتجر">
           <div className="grid gap-4">
-            <Field label="اسم المتجر"><input defaultValue="رواق للفنون" className="field" /></Field>
+            <Field label="اسم المتجر"><input defaultValue="لوفيانا للفنون" className="field" /></Field>
             <Field label="رقم التواصل"><input defaultValue="٩٢٠٠٠٠٠٠٠" className="field" /></Field>
             <Field label="العنوان"><input defaultValue="الرياض، حي الملقا" className="field" /></Field>
             <Field label="الرقم الضريبي"><input defaultValue="٣٠٠٠٠٠٠٠٠٠٠٠٠٠٣" className="field" /></Field>

@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
         <div>
-          <div className="font-display text-3xl font-bold">رواق</div>
+          <div className="font-display text-3xl font-bold">لوفيانا</div>
           <p className="mt-4 text-sm leading-7 opacity-70">دار سعودية للفن الجداري، ننتقي لوحات تحكي قصة بيتك بذوق رفيع وجودة متحفية.</p>
         </div>
         <div>
@@ -34,11 +34,11 @@ export function SiteFooter() {
             <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> الرياض، حي الملقا</li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> <span dir="ltr">٩٢٠٠٠٠٠٠٠</span></li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> البريد الإلكتروني للمتجر</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /> رواق للفنون</li>
+            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /> لوفيانا للفنون</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-ink-foreground/10 py-6 text-center text-xs opacity-60">© ٢٠٢٦ رواق للفنون. جميع الحقوق محفوظة.</div>
+      <div className="border-t border-ink-foreground/10 py-6 text-center text-xs opacity-60">© ٢٠٢٦ لوفيانا للفنون. جميع الحقوق محفوظة.</div>
     </footer>
   );
 }

@@ -9,9 +9,9 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/product/$id")({
   head: () => ({
     meta: [
-      { title: "اللوحة | رواق" },
+      { title: "اللوحة | لوفيانا" },
       { name: "description", content: "تفاصيل اللوحة والمقاسات المتوفرة." },
-      { property: "og:title", content: "اللوحة | رواق" },
+      { property: "og:title", content: "اللوحة | لوفيانا" },
       { property: "og:description", content: "تفاصيل اللوحة والمقاسات المتوفرة." },
     ],
   }),

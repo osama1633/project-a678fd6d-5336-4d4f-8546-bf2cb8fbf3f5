@@ -6,10 +6,10 @@ import { images } from "@/data/products";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "لوحة التحكم | رواق" },
-      { name: "description", content: "لوحة إدارة متجر رواق." },
+      { title: "لوحة التحكم | لوفيانا" },
+      { name: "description", content: "لوحة إدارة متجر لوفيانا." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "لوحة التحكم | رواق" },
+      { property: "og:title", content: "لوحة التحكم | لوفيانا" },
       { property: "og:description", content: "إدارة المتجر." },
     ],
   }),
@@ -34,7 +34,7 @@ function AdminLayout() {
       <aside className={`fixed inset-y-0 right-0 z-50 w-64 shrink-0 flex-col overflow-hidden bg-ink text-ink-foreground lg:sticky lg:top-0 lg:flex lg:h-screen ${open ? "flex" : "hidden"}`}>
         <img src={images.a7} alt="" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full object-cover opacity-25" />
         <div className="relative flex items-center justify-between p-6">
-          <Link to="/" className="font-display text-2xl font-bold">رواق</Link>
+          <Link to="/" className="font-display text-2xl font-bold">لوفيانا</Link>
           <button aria-label="إغلاق" onClick={() => setOpen(false)} className="lg:hidden"><X className="h-5 w-5" /></button>
         </div>
         <nav className="relative flex-1 space-y-1 px-3">

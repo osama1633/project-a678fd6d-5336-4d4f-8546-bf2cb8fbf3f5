@@ -21,7 +21,7 @@ export function SiteHeader() {
       <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 md:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-2">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold-gradient font-display text-lg font-bold text-gold-foreground">ر</span>
-          <span className="truncate font-display text-2xl font-bold tracking-tight">رواق</span>
+          <span className="truncate font-display text-2xl font-bold tracking-tight">لوفيانا</span>
         </Link>
         <nav className="hidden justify-center gap-8 md:flex">
           {nav.map((n) => (
