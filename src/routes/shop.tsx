@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { categories, products } from "@/data/products";
+import { useCatalog } from "@/data/products";
 import { PageHero, ProductCard } from "@/components/store/ProductCard";
 
 type Search = { category?: string | undefined; sort?: string | undefined };

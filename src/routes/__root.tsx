@@ -15,6 +15,7 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { StoreProvider } from "@/lib/store";
+import { CatalogProvider } from "@/data/products";
 import { SiteHeader } from "@/components/store/SiteHeader";
 import { SiteFooter } from "@/components/store/SiteFooter";
 
@@ -98,18 +99,20 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <StoreProvider>
-        {isAdmin ? (
-          <Outlet />
-        ) : (
-          <>
-            <SiteHeader />
-            <main className="min-h-[60vh]"><Outlet /></main>
-            <SiteFooter />
-          </>
-        )}
-        <Toaster position="top-center" dir="rtl" richColors />
-      </StoreProvider>
+      <CatalogProvider>
+        <StoreProvider>
+          {isAdmin ? (
+            <Outlet />
+          ) : (
+            <>
+              <SiteHeader />
+              <main className="min-h-[60vh]"><Outlet /></main>
+              <SiteFooter />
+            </>
+          )}
+          <Toaster position="top-center" dir="rtl" richColors />
+        </StoreProvider>
+      </CatalogProvider>
     </QueryClientProvider>
   );
 }
