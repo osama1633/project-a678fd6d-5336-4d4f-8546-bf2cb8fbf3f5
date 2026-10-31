@@ -31,6 +31,7 @@ const sorts = [
 function Shop() {
   const { category, sort = "featured" } = Route.useSearch();
   const navigate = useNavigate({ from: "/shop" });
+  const { products, categories } = useCatalog();
   let list = category ? products.filter((p) => p.category === category) : [...products];
   if (sort === "price-asc") list.sort((a, b) => a.price - b.price);
   if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
