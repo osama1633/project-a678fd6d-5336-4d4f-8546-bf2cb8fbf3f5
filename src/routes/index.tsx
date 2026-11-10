@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Award, Frame, ShieldCheck, Truck } from "lucide-react";
 import { formatPrice, images, ProductImg, useCatalog, type Product } from "@/data/products";
 import { ProductCard } from "@/components/store/ProductCard";
-import logo from "@/assets/luviana-logo-full.jpg.asset.json";
+import hero from "@/assets/luviana-botanical-room.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,12 +73,18 @@ function Home() {
   return (
     <>
       {/* Full-width hero */}
-      <section className="relative -mt-px flex min-h-[300px] w-full flex-col items-center justify-center gap-6 overflow-hidden bg-background px-6 py-8 md:gap-8 md:py-12">
-        <h1 className="sr-only">لوفيانا</h1>
-        <img src={logo.url} alt="لوفيانا" width={978} height={728} fetchPriority="high" className="max-h-[48svh] w-full max-w-2xl object-contain" />
-        <div className="flex flex-wrap items-center justify-center gap-6">
-          <Link to="/shop" className="btn-gold !rounded-sm !px-9 !py-4">اكتشف المجموعة <ArrowLeft className="h-4 w-4" /></Link>
-          <Link to="/shop" search={{ category: "custom" }} className="border-b border-foreground/50 pb-1 text-sm transition hover:border-gold hover:text-gold">صمّم لوحتك الخاصة</Link>
+      <section className="relative -mt-px flex min-h-[520px] w-full items-end overflow-hidden bg-ink md:min-h-[640px]">
+        <img src={hero.url} alt="لوحات نباتية ثلاثية في غرفة معيشة أنيقة" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[center_38%]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-12 text-ink-foreground md:px-10 md:py-16">
+          <h1 className="text-4xl font-semibold leading-[1.35] sm:text-5xl md:text-7xl">
+            حيثُ يسكنُ <span className="text-gold">الفن</span><br />جدرانَ بيتك
+          </h1>
+          <p className="mt-5 max-w-md text-base leading-8">أعمال فنية منتقاة بعناية، مطبوعة بجودة متحفية ومؤطرة يدوياً في الرياض.</p>
+          <div className="mt-7 flex flex-wrap items-center gap-6">
+            <Link to="/shop" className="btn-gold !rounded-sm !px-9 !py-4">اكتشف المجموعة <ArrowLeft className="h-4 w-4" /></Link>
+            <Link to="/shop" search={{ category: "custom" }} className="border-b border-ink-foreground/50 pb-1 text-sm transition hover:border-gold hover:text-gold">صمّم لوحتك الخاصة</Link>
+          </div>
         </div>
       </section>
 
