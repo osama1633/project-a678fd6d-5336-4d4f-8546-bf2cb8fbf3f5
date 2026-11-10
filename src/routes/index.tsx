@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Award, Frame, ShieldCheck, Truck } from "lucide-react";
 import { formatPrice, images, ProductImg, useCatalog, type Product } from "@/data/products";
 import { ProductCard } from "@/components/store/ProductCard";
+import logo from "@/assets/luviana-logo-full.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,6 +11,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "اكتشف لوحات جدارية فاخرة: إسلامية، تجريدية، طبيعة، سيارات ومدن. شحن لجميع مدن المملكة." },
       { property: "og:title", content: "لوفيانا | لوحات فنية جدارية فاخرة" },
       { property: "og:description", content: "دار سعودية للفن الجداري بجودة متحفية." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -70,28 +73,12 @@ function Home() {
   return (
     <>
       {/* Full-width hero */}
-      <section className="relative -mt-px h-[88vh] min-h-[560px] w-full overflow-hidden bg-ink">
-        <img src={images.a1} alt="لوحة الكلاسيكية الذهبية في مجلس فاخر" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-80 [animation:heroZoom_14s_ease-out_forwards]" />
-        <div className="absolute inset-0 bg-gradient-to-l from-ink/85 via-ink/45 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
-        <div className="relative mx-auto flex h-full max-w-7xl items-center px-6 md:px-10">
-          <div className="max-w-2xl text-ink-foreground">
-            <div className="fade-up"><Eyebrow>مجموعة خريف ٢٠٢٦</Eyebrow></div>
-            <h1 className="fade-up text-5xl leading-[1.25] font-semibold [animation-delay:.15s] sm:text-6xl md:text-8xl">
-              حيثُ يسكنُ <span className="text-gold">الفن</span>
-              <br /> جدرانَ بيتك
-            </h1>
-            <p className="fade-up mt-8 max-w-md text-base leading-8 opacity-80 [animation-delay:.3s] md:text-lg">
-              أعمال فنية منتقاة بعناية، مطبوعة بجودة متحفية ومؤطرة يدوياً في الرياض.
-            </p>
-            <div className="fade-up mt-10 flex flex-wrap items-center gap-6 [animation-delay:.45s]">
-              <Link to="/shop" className="btn-gold !rounded-sm !px-9 !py-4">اكتشف المجموعة <ArrowLeft className="h-4 w-4" /></Link>
-              <Link to="/shop" search={{ category: "custom" }} className="border-b border-ink-foreground/50 pb-1 text-sm transition hover:border-gold hover:text-gold">صمّم لوحتك الخاصة</Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-ink-foreground/70 md:flex">
-          <span>اكتشف</span><span className="h-10 w-px animate-pulse bg-gold" />
+      <section className="relative -mt-px flex min-h-[300px] w-full flex-col items-center justify-center gap-6 overflow-hidden bg-background px-6 py-8 md:gap-8 md:py-12">
+        <h1 className="sr-only">لوفيانا</h1>
+        <img src={logo.url} alt="لوفيانا" width={978} height={728} fetchPriority="high" className="max-h-[48svh] w-full max-w-2xl object-contain" />
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <Link to="/shop" className="btn-gold !rounded-sm !px-9 !py-4">اكتشف المجموعة <ArrowLeft className="h-4 w-4" /></Link>
+          <Link to="/shop" search={{ category: "custom" }} className="border-b border-foreground/50 pb-1 text-sm transition hover:border-gold hover:text-gold">صمّم لوحتك الخاصة</Link>
         </div>
       </section>
 
