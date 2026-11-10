@@ -38,6 +38,69 @@ export type Database = {
         }
         Relationships: []
       }
+      orders: {
+        Row: {
+          address: string
+          city: string
+          created_at: string
+          district: string
+          email: string | null
+          first_name: string
+          id: string
+          items: Json
+          last_name: string
+          order_number: number
+          payment_method: string
+          payment_status: string
+          phone: string
+          request_id: string
+          shipping: number
+          status: string
+          subtotal: number
+          total: number
+        }
+        Insert: {
+          address: string
+          city: string
+          created_at?: string
+          district: string
+          email?: string | null
+          first_name: string
+          id?: string
+          items: Json
+          last_name: string
+          order_number?: never
+          payment_method?: string
+          payment_status?: string
+          phone: string
+          request_id: string
+          shipping: number
+          status?: string
+          subtotal: number
+          total: number
+        }
+        Update: {
+          address?: string
+          city?: string
+          created_at?: string
+          district?: string
+          email?: string | null
+          first_name?: string
+          id?: string
+          items?: Json
+          last_name?: string
+          order_number?: never
+          payment_method?: string
+          payment_status?: string
+          phone?: string
+          request_id?: string
+          shipping?: number
+          status?: string
+          subtotal?: number
+          total?: number
+        }
+        Relationships: []
+      }
       products: {
         Row: {
           badge: string | null
