@@ -168,7 +168,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      list_order_statuses: {
+        Args: never
+        Returns: {
+          order_number: number
+          status: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
