@@ -15,6 +15,13 @@
       "when": 1794269298495,
       "tag": "0001_create_private_orders",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794270319108,
+      "tag": "0002_public_order_number_status",
+      "breakpoints": true
     }
   ]
 }
