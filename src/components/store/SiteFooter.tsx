@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { useCatalog } from "@/data/products";
+import { BrandLogo } from "./BrandLogo";
 
 export function SiteFooter() {
   const { categories } = useCatalog();
@@ -8,7 +9,7 @@ export function SiteFooter() {
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
         <div>
-          <div className="font-display text-3xl font-bold">لوفيانا</div>
+          <Link to="/" aria-label="لوفيانا، الصفحة الرئيسية" className="inline-block"><BrandLogo className="h-28 w-[150px]" /></Link>
           <p className="mt-4 text-sm leading-7 opacity-70">دار سعودية للفن الجداري، ننتقي لوحات تحكي قصة بيتك بذوق رفيع وجودة متحفية.</p>
         </div>
         <div>

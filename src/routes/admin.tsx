@@ -2,6 +2,7 @@ import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { ArrowRight, BarChart3, Bell, ClipboardList, Home, LayoutGrid, LogOut, Menu, Package, Search, Settings, Tag, User, X } from "lucide-react";
 import { useState } from "react";
 import { images } from "@/data/products";
+import { BrandLogo } from "@/components/store/BrandLogo";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -34,7 +35,7 @@ function AdminLayout() {
       <aside className={`fixed inset-y-0 right-0 z-50 w-64 shrink-0 flex-col overflow-hidden bg-ink text-ink-foreground lg:sticky lg:top-0 lg:flex lg:h-screen ${open ? "flex" : "hidden"}`}>
         <img src={images.a7} alt="" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full object-cover opacity-25" />
         <div className="relative flex items-center justify-between p-6">
-          <Link to="/" className="font-display text-2xl font-bold">لوفيانا</Link>
+          <Link to="/" aria-label="لوفيانا، الصفحة الرئيسية"><BrandLogo className="h-24 w-32" /></Link>
           <button aria-label="إغلاق" onClick={() => setOpen(false)} className="lg:hidden"><X className="h-5 w-5" /></button>
         </div>
         <nav className="relative flex-1 space-y-1 px-3">
